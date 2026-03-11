@@ -25,12 +25,20 @@ NO usamos: Flexbox, Grid, Variables CSS, Fuentes web
   box-sizing: border-box;
 }
 
+:root{
+  --color-primary:#6b1f2a;
+  --color-primary-dark:#4a141c;
+  --color-accent:#c9a227;
+  --color-accent-soft:#a8841f;
+  --color-background:#f3efe6;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333333;
-  background-color: #ffffff;
+  background-color: var(--color-background)
 }
 
 /* ===========================================
@@ -78,17 +86,17 @@ strong {
      3. ENLACES
      =========================================== */
 a {
-  color: #2563eb;
+  color: var(--color-primary)
   text-decoration: none;
 }
 
 a:hover {
-  color: #1d4ed8;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
 a:active {
-  color: #1e40af;
+  color: var(--color-accent-soft);
 }
 
 /* ===========================================
