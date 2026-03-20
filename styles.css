@@ -187,14 +187,20 @@ ul {
 .hero {
   padding: 64px 0;
   text-align: center;
-  background-color: var(--color-primary-soft);
+  background-color: blue;
   margin-bottom: 48px;
 }
 
 .hero__container {
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.heros {
+
 }
 
 .hero__title {
@@ -208,6 +214,23 @@ ul {
   color: var(--color-accent);
   margin-bottom: 24px;
   font-weight: 600;
+}
+
+.hero__img {
+  width: 120px;              
+  height: 120px;             
+  object-fit: cover;         
+  border-radius: 50%;        
+  transition: all 0.4s ease; 
+  cursor: pointer;
+}
+
+
+.hero__img:hover {
+  width: 240px;              
+  height: 240px;  
+  border-radius: 10%;        
+  transform: scale(1.15);    
 }
 
 .hero__description {
