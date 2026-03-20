@@ -1,577 +1,256 @@
-/*
-=============================================
-MÓDULO 1: FUNDAMENTOS CSS
-=============================================
-Proyecto final del Módulo 1
-=============================================
-*/
 
 /* ===========================================
-   1. RESET BÁSICO
+
+1. RESET
    =========================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  }
 
+/* ===========================================
+2. VARIABLES (DARK PRO)
+=========================================== */
 :root{
 
-  /* VINOTINTO */
-  --color-primary:#6b1f2a;
-  --color-primary-dark:#4a141c;
-  --color-primary-soft:#8a2d3a;
-  --color-primary-muted:#a64a57;
+--color-primary:#0f172a;
+--color-primary-dark:#020617;
+--color-primary-soft:#1e293b;
+--color-primary-muted:#334155;
 
-  /* ORO */
-  --color-accent:#c9a227;
-  --color-accent-soft:#a8841f;
-  --color-accent-dark:#7a6318;
+--color-accent:#3b82f6;
+--color-accent-soft:#60a5fa;
+--color-accent-dark:#2563eb;
 
-  /* NEUTRAL */
-  --color-background:#f3efe6;
+--color-background:#e2e8f0;
 
-  /* CONTRASTE */
-  --color-contrast:#1f4d4a;
-  --color-contrast-soft:#2f4f6f;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333333;
-  background-color: var(--color-primary);
+--color-contrast:#111827;
+--color-contrast-soft:#1f2937;
 }
 
 /* ===========================================
-     2. TIPOGRAFÍA GENERAL
-     =========================================== */
-h1,
-h2,
-h3,
-h4 {
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  color:var(--color-accent);
+3. BASE (MOBILE FIRST)
+=========================================== */
+body {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+color: var(--color-background);
+background-color: var(--color-primary);
 }
 
-h1 {
-  font-size: 32px;
+/* ===========================================
+4. TIPOGRAFÍA
+=========================================== */
+h1, h2, h3, h4 {
+font-weight: bold;
+line-height: 1.2;
+margin-bottom: 16px;
+color: var(--color-accent);
 }
 
-h2 {
-  font-size: 28px;
-  margin-top: 48px;
-}
-
-h3 {
-  font-size: 24px;
-  margin-top: 32px;
-}
-
-h4 {
-  font-size: 18px;
-  margin-top: 24px;
-}
+h1 { font-size: 28px; }
+h2 { font-size: 24px; margin-top: 40px; }
+h3 { font-size: 20px; margin-top: 24px; }
+h4 { font-size: 16px; margin-top: 16px; }
 
 p {
-  margin-bottom: 16px;
+margin-bottom: 16px;
 }
 
 strong {
-  font-weight: bold;
-  color: var(--color-primary-muted);
+color: var(--color-accent-soft);
 }
 
 /* ===========================================
-     3. ENLACES
-     =========================================== */
+5. LINKS
+=========================================== */
 a {
-  color: var(--color-accent);
-  text-decoration: none;
+color: var(--color-accent);
+text-decoration: none;
+transition: 0.3s;
 }
 
 a:hover {
-  color: var(--color-accent-soft);
-  text-decoration: underline;
-}
-
-a:active {
-  color: var(--color-accent-dark);
+color: var(--color-accent-soft);
 }
 
 /* ===========================================
-     4. LISTAS
-     =========================================== */
-ul {
-  list-style: none;
-}
-
-/* ===========================================
-     5. HEADER
-     =========================================== */
+6. HEADER
+=========================================== */
 .header {
-  background-color: var(--color-primary-dark);
-  border-bottom: 1px solid var(--color-primary-dark);
-  padding: 24px 0;
-  }
+background-color: var(--color-primary-dark);
+padding: 20px 0;
+border-bottom: 1px solid var(--color-primary-muted);
+}
 
 .header__container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.header__brand {
-  text-align: center;
-  margin-bottom: 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+padding: 0 20px;
 }
 
 .header__name {
-  color: var(--color-accent);
-  margin-bottom: 8px;
+color: var(--color-accent);
 }
 
 .header__tagline {
-  color: var(--color-accent-soft);
-  font-size: 14px;
+color: var(--color-accent-soft);
+font-size: 14px;
 }
 
 /* ===========================================
-     6. NAVEGACIÓN
-     =========================================== */
-.nav {
-  text-align: center;
-}
-
+7. NAV
+=========================================== */
 .nav__list {
-  display: inline-block;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
 
 .nav__item {
-  display: inline-block;
-  margin: 0 16px;
+margin: 8px;
 }
 
 .nav__link {
-  padding: 8px 12px;
-  display: inline-block;
-  color: var(--color-accent-dark);
-  font-weight: 500;
+color: var(--color-background);
+padding: 6px 10px;
 }
 
 .nav__link:hover {
-  color: var(--color-accent-soft);
-  text-decoration: none;
-}
-
-.nav__link--active {
-  color: var(--color-accent-dark);
-  font-weight: bold;
+color: var(--color-accent);
 }
 
 /* ===========================================
-     7. MAIN CONTENT
-     =========================================== */
+8. MAIN
+=========================================== */
 .main {
-
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 20px;
+max-width: 1200px;
+margin: auto;
+padding: 20px;
 }
 
 /* ===========================================
-     8. HERO SECTION
-     =========================================== */
+9. HERO
+=========================================== */
 .hero {
-  grid-area: hero;
-  padding: 64px 0;
-  text-align: center;
-  background-color: var(--color-primary-soft);
-  margin-bottom: 48px;
-}
-
-.hero__container {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
+text-align: center;
+padding: 50px 20px;
+background: linear-gradient(var(--color-primary), var(--color-accent-soft));
 }
 
 .hero__title {
-  font-size: 48px;
-  color: var(--color-accent);
-  margin-bottom: 16px;
+font-size: 36px;
 }
 
 .hero__subtitle {
-  font-size: 24px;
-  color: var(--color-accent);
-  margin-bottom: 24px;
-  font-weight: 600;
+font-size: 20px;
+color: var(--color-accent-soft);
 }
 
 .hero__img {
-  width: 120px;              
-  height: 120px;             
-  object-fit: cover;         
-  border-radius: 50%;        
-  transition: all 0.4s ease; 
-  cursor: pointer;
+width: 120px;
+height: 120px;
+border-radius: 50%;
+margin: 20px 0;
+border: 3px solid var(--color-accent);
+transition: 0.4s;
 }
 
-
 .hero__img:hover {
-  width: 200px;              
-  height: 200px;  
-  border-radius: 10%;        
-  transform: scale(1.15);    
+transform: scale(2.1);
 }
 
 .hero__description {
-  font-size: 18px;
-  color: var(--color-accent-soft);
-  margin-bottom: 32px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero__actions {
-  margin-bottom: 48px;
-}
-
-.hero__stats {
-  text-align: center;
+max-width: 500px;
+margin: auto;
 }
 
 .stat {
-  display: inline-block;
-  margin: 0 32px;
-  text-align: center;
+display: inline-block;
+margin: 10px;
 }
 
 .stat__number {
-  display: block;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--color-accent);
-  margin-bottom: 8px;
-}
-
-.stat__label {
-  font-size: 14px;
-  color: var(--color-accent-soft);
+font-size: 24px;
+color: var(--color-accent);
 }
 
 /* ===========================================
-     9. BOTONES
-     =========================================== */
+10. BUTTONS
+=========================================== */
 .button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: 2px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
+display: inline-block;
+padding: 10px 20px;
+border-radius: 8px;
+margin: 5px;
+transition: 0.3s;
 }
 
 .button--primary {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
+background: var(--color-accent);
+color: white;
 }
 
 .button--primary:hover {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  text-decoration: none;
+background: var(--color-accent-dark);
 }
 
 .button--secondary {
-  background-color: var(--color-primary-muted);
-  color: var(--color-primary);
-  border-color: var(--color-accent-dark);
-}
-
-.button--secondary:hover {
-  background-color: var(--color-primary-soft);
-  text-decoration: none;
-}
-
-.button--large {
-  padding: 16px 32px;
-  font-size: 18px;
+background: var(--color-primary-muted);
+color: white;
 }
 
 /* ===========================================
-     10. ABOUT SECTION
-     =========================================== */
-.about {
-  grid-area: about;
-  padding: 48px 0;
+11. SECTIONS
+=========================================== */
+.about,
+.skills,
+.contact {
+padding: 40px 0;
 }
 
-.about__container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about__title {
-  text-align: center;
-  color: var(--color-accent);
-  margin-bottom: 32px;
-}
-
-.about__intro {
-  font-size: 20px;
-  text-align: center;
-  color: var(--color-accent-soft);
-  margin-bottom: 24px;
-}
-
-.about__text {
-  color: var(--color-background);
-  margin-bottom: 32px;
-}
-
-/* ===========================================
-     11. QUOTE
-     =========================================== */
-.quote {
-  background-color: var(--color-primary-muted);
-  padding: 24px;
-  margin: 32px 0;
-  border-left: 4px solid var(--color-primary);
-}
-
-.quote__text {
-  font-size: 18px;
-  font-style: italic;
-  color: var(--color-primary-dark);
-  margin-bottom: 16px;
-}
-
-.quote__author {
-  color: var(--color-background);
-  font-size: 14px;
-  display: block;
-  text-align: right;
-}
-
-/* ===========================================
-     12. VALUES
-     =========================================== */
-.values {
-  margin-top: 48px;
-}
-
-.values__title {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.values__list {
-  padding: 0;
-}
-
-.values__item {
-  padding: 16px;
-  margin-bottom: 16px;
-  background-color: var(--color-primary-dark);
-  border: 1px solid var(--color-accent-dark);
-}
-
-.values__item:hover {
-  background-color: var(--color-primary-soft)
-  border-color: var(--color-primary);
-}
-
-.values__icon {
-  font-size: 24px;
-  margin-right: 12px;
-}
-
-.values__item strong {
-  margin-right: 8px;
-}
-
-.values__item span {
-  color: var(--color-accent);
-}
-
-/* ===========================================
-     13. PROJECTS SECTION
-     =========================================== */
 .projects {
-  grid-area: projects;
-  padding: 64px 0;
-  background-color: var(--color-primary-dark);
+padding: 40px 0;
+background-color: var(--color-primary-dark);
 }
-
-.projects__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.projects__title {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.projects__description {
-  text-align: center;
-  color: #666666;
-  margin-bottom: 48px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.projects__grid {
-  padding: 0 20px;
-  }
 
 /* ===========================================
-     14. PROJECT CARD
-     =========================================== */
-.project {
-  background-color: var(--color-contrast);
-  padding: 32px;
-  margin-bottom: 32px;
-  border: 1px solid var(--color-accent-dark);
+12. CARDS
+=========================================== */
+.project,
+.values__item,
+.learning {
+background: var(--color-contrast);
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+transition: 0.3s;
 }
 
 .project:hover {
-  border-color: var(--color-primary);
-}
-
-.project--featured {
-  border: 2px solid var(--color-primary);
-  position: relative;
-}
-
-.project__badge {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.project__title {
-  color: var(--color-accent);
-  margin-bottom: 16px;
-}
-
-.project__description {
-  color: var(--color-accent-soft);
-  margin-bottom: 24px;
-}
-
-.project__subtitle {
-  font-size: 16px;
-  color: var(--color-accent-soft);
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
-
-.project__learnings {
-  list-style: disc;
-  padding-left: 24px;
-  margin-bottom: 24px;
-}
-
-.project__learnings li {
-  color: var(--color-accent-soft);
-  margin-bottom: 8px;
-}
-
-.project__technologies {
-  margin-bottom: 24px;
-}
-
-.tag {
-  display: inline-block;
-  background-color: var(--color-primary-muted);
-  color: #ffffff;
-  padding: 4px 12px;
-  margin-right: 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.project__links {
-  text-align: left;
-}
-
-.project__link {
-  display: inline-block;
-  margin-right: 16px;
-  font-weight: 600;
+transform: translateY(-5px);
 }
 
 /* ===========================================
-     15. SKILLS SECTION
-     =========================================== */
-.skills {
-  grid-area: skills;
-  padding: 64px 0;
-}
-
-.skills__container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.skills__title {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.skills__subtitle {
-  text-align: center;
-  color: var(--color-accent-soft);
-  margin-bottom: 32px;
-}
-
-.skills__list {
-  margin-bottom: 48px;
-}
-
-.skill {
-  margin-bottom: 32px;
-}
-
-.skill__name {
-  margin-bottom: 8px;
-  color: var(--color-accent);
-}
-
+13. SKILLS
+=========================================== */
 .skill__bar {
-  background-color: var(--color-contrast-soft);
-  height: 24px;
-  position: relative;
-  margin-bottom: 8px;
+background: var(--color-contrast-soft);
+height: 20px;
+border-radius: 10px;
+overflow: hidden;
 }
 
 .skill__progress {
-  background-color: var(--color-accent-dark);
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+background: var(--color-accent);
+height: 100%;
 }
 
 .skill__progress--html {
@@ -586,119 +265,59 @@ ul {
   width: 20%;
 }
 
-.skill__percentage {
-  color: var(--color-background);
-  font-size: 14px;
-}
 
 /* ===========================================
-     16. LEARNING
-     =========================================== */
-.learning {
-  background-color:var(--color-contrast);
-  padding: 24px;
-}
-
-.learning__title {
-  margin-bottom: 16px;
-  color: var(--color-background);
-}
-
-.learning__list {
-  list-style: disc;
-  padding-left: 24px;
-}
-
-.learning__item {
-  color: var(--color-accent-soft);
-  margin-bottom: 8px;
-}
-
-/* ===========================================
-     17. CONTACT SECTION
-     =========================================== */
-.contact {
-  grid-area: contact;
-  padding: 64px 0;
-  background-color: var(--color-contrast-soft);
-}
-
+14. CONTACT
+=========================================== */
 .contact__container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.contact__title {
-  margin-bottom: 16px;
-}
-
-.contact__description {
-  color: var(--color-primary);
-  margin-bottom: 48px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact__methods {
-  margin-bottom: 48px;
+.contact {
+text-align: center;
 }
 
 .contact__method {
-  display: inline-block;
-  margin: 0 32px 32px;
-  text-align: center;
-}
-
-.contact__method-title {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: var(--color-accent-soft);
-}
-
-.contact__link {
-  color: var(--color-primary);
-  font-weight: 600;
+margin: 15px;
 }
 
 /* ===========================================
-     18. FOOTER
-     =========================================== */
+15. FOOTER
+=========================================== */
 .footer {
-  background-color: var(--color-primary-dark);
-  color: var(--color-accent-soft);
-  padding: 48px 0;
-  text-align: center;
+text-align: center;
+padding: 30px;
+background: var(--color-primary-dark);
+border-top: 1px solid var(--color-primary-muted);
 }
 
-.footer__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ===========================================
+16. RESPONSIVE (TABLET + DESKTOP)
+=========================================== */
+@media(min-width:768px){
+
+.header__container{
+flex-direction: row;
+justify-content: space-between;
 }
 
-.footer__nav {
-  margin-bottom: 24px;
+.hero__title{
+font-size: 48px;
 }
 
-.footer__link {
-  color:var(--color-accent);
-  margin: 0 16px;
-  display: inline-block;
+.projects__grid{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
 }
 
-.footer__link:hover {
-  color:var(--color-accent-dark)
-  text-decoration: none;
 }
 
-.footer__copyright {
-  color:var(--color-accent-soft);
-  margin-bottom: 8px;
+@media(min-width:1024px){
+
+.projects__grid{
+grid-template-columns: 1fr 1fr 1fr;
 }
 
-.footer__credits {
-  color: var(--color-accent)
-  font-size: 14px;
 }
