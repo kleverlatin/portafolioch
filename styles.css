@@ -93,8 +93,13 @@ color: var(--color-accent-soft);
 =========================================== */
 .header {
 background-color: var(--color-primary-dark);
-padding: 20px 0;
+padding: 8px 0;
 border-bottom: 1px solid var(--color-primary-muted);
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+
 }
 
 .header__container {
@@ -104,6 +109,7 @@ align-items: center;
 max-width: 1200px;
 margin: auto;
 padding: 0 20px;
+
 }
 
 .header__name {
@@ -280,13 +286,15 @@ height: 100%;
 /* ===========================================
 14. CONTACT
 =========================================== */
-.contact__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .contact {
 text-align: center;
+width: 100%;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .contact__method {
@@ -331,4 +339,22 @@ gap: 20px;
 grid-template-columns: 1fr 1fr 1fr;
 }
 
+.contact__container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .contact__methods {
+    grid-column: span 2; /* ocupa toda la fila */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .button {
+    max-width: 300px;
+    justify-self: center;
+  }
+
 }
+
