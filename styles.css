@@ -194,8 +194,8 @@ margin: 10px;
 }
 
 .stat__number {
-font-size: 24px;
-color: var(--color-accent);
+font-size: 1 rem;
+color: var(--color-contrast)
 }
 
 /* ===========================================
@@ -210,7 +210,7 @@ transition: 0.3s;
 }
 
 .button--primary {
-background: var(--color-accent);
+background: var(--color-primary-muted);
 color: white;
 }
 
@@ -233,7 +233,7 @@ padding: 40px 0;
 }
 
 .projects {
-padding: 40px 0;
+padding: 10px 5px;
 background-color: var(--color-primary-dark);
 }
 
@@ -252,7 +252,7 @@ transition: 0.3s;
 }
 
 .project:hover {
-transform: translateY(-5px);
+transform: translateY(-9px);
 }
 
 /* ===========================================
@@ -351,10 +351,10 @@ grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
   }
 
-  .button {
+ button {
     max-width: 300px;
     justify-self: center;
-  }
+  } 
 
 }
 
